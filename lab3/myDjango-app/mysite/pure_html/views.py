@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from teammate.models import Teammate
 from django.template import loader
+import json
 
 def index(request):
     template = loader.get_template("./index.html")
@@ -22,6 +23,5 @@ def assignment(request):
     for m in members:
         name = f"{m.id}. {m.title} {m.first_name} {m.last_name}"
         names.append(name)
-    teammates = '\n'.join(names)
-    context = {'teammates': teammates}
+    context = {'teammates': json.dumps(names)}
     return render(request, './button/assignment.html', context)
