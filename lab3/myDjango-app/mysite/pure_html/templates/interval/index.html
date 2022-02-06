@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="super-center-grid main-layout default-shadow">
+    <h1>Timer</h1>
+    <h1 id="time">-</h1>
+</div>
+{% endblock %}
+{% block scripts %}
+    {% load static %}
+    <script src="{%static 'js/interval.js'%}"></script>
+{% endblock %}

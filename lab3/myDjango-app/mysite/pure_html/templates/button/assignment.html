@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="super-center-grid main-layout default-shadow">
+    <button id="show-team-btn" >Show Team</button>
+    <h1 id="show-name">-</h1>
+    <input type="hidden" id="myTeammates" name="variable" value="{{ teammates }}">
+</div>
+{% endblock %}
+{% block scripts %}
+    {% load static %}
+    <script type="text/javascript">
+        var teammates = document.getElementById("myTeammates").value;
+    </script>
+    <script src="{% static 'js/assignment.js' %}">
+    </script>
+{% endblock %}
