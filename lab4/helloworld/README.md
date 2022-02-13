@@ -1,10 +1,10 @@
-Step 1 - Create a Django project
+Step 1 - Create a Django project and make necessary changes
 ```
 django-admin startproject helloworld
 python3 manage.py startapp basic
 ```
 
-Step 2 - Create a docker file inside the project helloworld
+Step 2 - Create a docker file inside the project helloworld and add the following
 
 ```
 FROM python:3.9.7-buster
