@@ -3,7 +3,7 @@ services:
    
     api:
         build:
-            context: ./counter
+            context: .
             dockerfile: Dockerfile
   
         ports:
