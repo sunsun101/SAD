@@ -45,7 +45,7 @@ volumes:
 
 ```
 
-Step 4 - Run docker composer
+Step 4 - Run docker compose
 ```
 docker-compose up
 ```
