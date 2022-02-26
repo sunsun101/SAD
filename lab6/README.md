@@ -1,5 +1,3 @@
-how to create and run your Image/Container.
-
 Step 1 - Create a Dockerfile
 ```
 FROM python:3.10.2-buster
@@ -11,7 +9,7 @@ RUN pip install "Django==4.0.2"
 CMD tail -f /dev/null
 ```
 
-Step 2 - Create a docker compose
+Step 2 - Create a docker-compose.yml file
 ```
 version: "3"
 services: 
@@ -140,7 +138,7 @@ DATABASES = {
 }
 ```
 
-Step 10 - Remove the docker container and docker image the start the docker compose again
+Step 10 - Remove the docker container and docker image the run the docker compose again
 ```
 docker rm lab6-api-1 -f
 docker rmi lab6_api
@@ -149,9 +147,9 @@ docker-compose up
 
 Step 11 - Now go to http://localhost:8000/ you should be able to see Django project up and running
 
-Step 12 - You can access the postgresql database at localhost:5432 using Database name Counter from any GUI like dbeaver.
+Step 12 - You can access the postgresql database(db name - counter) at localhost:5432 from any GUI application like dbeaver.
 
-Step 13 - Make necessary changes to the Django application which is directly reflected by volume.
+Step 13 - Make necessary changes to the Django application.
 
 Step 14 - To run the migrations , get inside django container and run
 ```
