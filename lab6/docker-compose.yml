@@ -1,0 +1,34 @@
+version: "3"
+services: 
+   
+    api:
+        build:
+            context: ./counter
+            dockerfile: Dockerfile
+  
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./counter:/home/app
+     
+
+    postgres:
+      image: postgres:14.1
+      healthcheck:
+        test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+        timeout: 45s
+        interval: 10s
+        retries: 10
+      restart: always
+      environment:
+        - POSTGRES_USER=root
+        - POSTGRES_PASSWORD=password
+        - APP_DB_USER=docker
+        - APP_DB_PASS=docker
+        - APP_DB_NAME=docker
+      volumes:
+        - postgres-volume:/var/lib/postgresql/data
+      ports:
+        - 5432:5432
+volumes: 
+  postgres-volume:
